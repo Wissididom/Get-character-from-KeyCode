@@ -1,25 +1,27 @@
-﻿Public Class Form1
+﻿Imports System.Windows.Forms
 
-    Private Sub btn_OK_Click(sender As Object, e As EventArgs) Handles btn_OK.Click
-        MsgBox(Chr(nud_KeyCode.Value), 0, "")
+Public Class Form1
+
+    Private Sub Btn_OK_Click(sender As Object, e As EventArgs) Handles Btn_OK.Click
+        MessageBox.Show(Chr(NudKeyCode.Value))
     End Sub
 
-    Private Sub btn_OK_KeyDown(sender As Object, e As KeyEventArgs) Handles btn_OK.KeyDown
-        verentern(sender, e)
+    Private Sub Btn_OK_KeyDown(sender As Object, e As KeyEventArgs) Handles Btn_Ok.KeyDown
+        Verentern(sender, e)
     End Sub
 
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-        verentern(sender, e)
+        Verentern(sender, e)
     End Sub
 
-    Private Sub nud_KeyCode_KeyDown(sender As Object, e As KeyEventArgs) Handles nud_KeyCode.KeyDown
-        verentern(sender, e)
+    Private Sub Nud_KeyCode_KeyDown(sender As Object, e As KeyEventArgs) Handles NudKeyCode.KeyDown
+        Verentern(sender, e)
     End Sub
 
-    Private Sub verentern(sender As Object, e As KeyEventArgs)
+    Private Sub Verentern(sender As Object, e As KeyEventArgs)
         Select Case e.KeyCode
             Case 13 'Enter
-                btn_OK.PerformClick()
+                Btn_OK.PerformClick()
         End Select
     End Sub
 End Class
